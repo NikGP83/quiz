@@ -1,19 +1,11 @@
-import Link from 'next/link';
 import React from 'react';
+import styles from './header.module.css';
 
 function Header() {
   return (
     <header>
-      <div className='navigation-wrapper'>
-        <h1 className='app-header'>Викторина, выбери категорию вопросов!</h1>
-        <ul>
-          <li>
-            <Link href='#'>Frontend</Link>
-          </li>
-          <li>
-            <Link href='#'>Backend</Link>
-          </li>
-        </ul>
+      <div className={styles.navigation_wrapper}>
+        <h1 className={styles.app_header}>Викторина!!!</h1>
       </div>
     </header>
   );

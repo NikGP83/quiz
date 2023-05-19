@@ -1,0 +1,23 @@
+.page {
+  height: 100%;
+}
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100%;
+  background-color: rgb(102, 189, 203);
+}
+.app_header {
+  padding: 500px;
+}
+
+.main_page {
+  background-image: url('../../public/img/fon-na-viktorinu-54.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.play_button {
+    color: black;
+    text-decoration: none;
+}
