@@ -1,11 +1,16 @@
 import React from 'react';
 import styles from './header.module.css';
+import '../../globals.css';
 
 function Header() {
+
+
+  const rootClasses = [styles.navigation_wrapper, `container`].join(' ');
+
   return (
     <header>
-      <div className={styles.navigation_wrapper}>
-        <h1 className={styles.app_header}>Викторина!!!</h1>
+      <div className={rootClasses}>
+        <h1 className={styles.header_text}>Викторина!!!</h1>
       </div>
     </header>
   );
