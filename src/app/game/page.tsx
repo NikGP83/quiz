@@ -4,6 +4,7 @@ import styles from './page.module.css';
 import QuestionList from '@/components/question-list/question-list';
 import { questions } from '@/mock/mock';
 import { Metadata } from 'next';
+import Result from '@/components/result/result';
 
 export const metadata: Metadata = {
   title: 'Game',
@@ -11,13 +12,19 @@ export const metadata: Metadata = {
 
 function Game() {
   const [step, setStep] = useState<number>(0);
+  const [correctAnswer, setCorrectAnswer] = useState<number>(0);
   const question = questions[step];
+  const questionsLength = questions.length;
   const getVariant = (index: number) => { 
      setStep(step + 1);
+     if(index === question.correct){
+      setCorrectAnswer( correctAnswer + 1);
+     }
   }
 
-  const percentage = Math.round((step / questions.length) * 100);
-  console.log(percentage)
+
+  const percentage = Math.round((step / questionsLength) * 100);
+
   return (
     <>
       <div className={styles.game_block_wrapper}>
@@ -25,7 +32,9 @@ function Game() {
           <div className={styles.progress_bar}>
             <div style={{width: `${percentage}%`}} className={styles.progress_bar_inner}></div>
           </div>
-          <QuestionList step={step} question={question}  getVariant={getVariant}/>
+          {step < questionsLength ?<QuestionList step={step} question={question}  getVariant={getVariant}/>
+          : <Result correctAnswer={correctAnswer} questionsLength={questionsLength}/>
+          }
         </div>
       </div>
     </>
