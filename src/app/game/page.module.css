@@ -1,0 +1,22 @@
+.game_block_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+.game_block {
+    min-width: 400px;
+    padding: 30px;
+    border: 2px solid grey;
+    border-radius: 4px;
+    background-color: rgb(249, 249, 249);
+}
+
+.progress_bar{
+    height: 10px;
+    border-radius: 30px;
+    background-color: rgb(232, 232, 232);
+    margin-bottom: 25px;
+}

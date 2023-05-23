@@ -1,0 +1,24 @@
+.question_title{
+    user-select: none;
+}
+.question_item {
+    width: 500px;
+    border: 2px solid grey;
+    padding: 15px;
+    list-style: none;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.question_item:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.question_item:active{
+    background-color: yellow;
+}
+
+.question_list {
+    padding: 0;
+}
