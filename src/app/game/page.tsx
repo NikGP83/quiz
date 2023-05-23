@@ -12,16 +12,20 @@ export const metadata: Metadata = {
 function Game() {
   const [step, setStep] = useState<number>(0);
   const question = questions[step];
-  const getVariant = (index: number) => {
-    console.log(index, step)
-    setStep(step + 1);
+  const getVariant = (index: number) => { 
+     setStep(step + 1);
   }
+
+  const percentage = Math.round((step / questions.length) * 100);
+  console.log(percentage)
   return (
     <>
       <div className={styles.game_block_wrapper}>
         <div className={styles.game_block}>
-          <div className={styles.progress_bar}></div>
-          <QuestionList question={question}  getVariant={getVariant}/>
+          <div className={styles.progress_bar}>
+            <div style={{width: `${percentage}%`}} className={styles.progress_bar_inner}></div>
+          </div>
+          <QuestionList step={step} question={question}  getVariant={getVariant}/>
         </div>
       </div>
     </>

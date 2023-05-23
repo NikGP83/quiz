@@ -5,11 +5,13 @@ import styles from './question-list.module.css';
 
 interface QuestionListProps  {
   question: Questions;
-  getVariant: (index: number) => void
+  getVariant: (index: number) => void;
+  step: number;
 }
 
 function QuestionList({getVariant, question}: QuestionListProps) {
   const { title, variants, correct } = question;
+  
   return (
     <>
       <h1 className={styles.question_title}>{title}</h1>
